@@ -1,0 +1,13 @@
+# The name of the work flow. Badges will use this name
+name: '.NET code metrics'
+on:
+  push:
+    branches: [ main ]
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: .NET code metrics
+      uses: sn-cscharf/GitHubAction.ResourceGroup@master
