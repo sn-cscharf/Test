@@ -13,12 +13,12 @@ jobs:
       run: env
     
     - name: Other
-      run: echo ${{ github.ref }}
+      run: echo $github.ref_name
     
     - name: .NET code metrics
       uses: sn-cscharf/GitHubAction.ResourceGroup@master
       with:
-        name: ${{ github.ref }}
+        name: ${{ github.ref_name }}
         region: westeurope
         client-id: ${{ secrets.CLIENT_ID }}
         client-secret: ${{ secrets.CLIENT_SECRET }}
