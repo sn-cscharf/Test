@@ -13,4 +13,6 @@ jobs:
       uses: sn-cscharf/GitHubAction.ResourceGroup@master
       with:
         region: westeurope
+        client-id: ${{ secrets.CLIENT_ID }}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
         tenant-id: ${{ secrets.TENANT }}
