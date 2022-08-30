@@ -15,7 +15,7 @@ jobs:
     - name: .NET code metrics
       uses: sn-cscharf/GitHubAction.ResourceGroup@master
       with:
-        name: $GITHUB_REF_NAME
+        name: ${{ github.ref.name }}
         region: westeurope
         client-id: ${{ secrets.CLIENT_ID }}
         client-secret: ${{ secrets.CLIENT_SECRET }}
