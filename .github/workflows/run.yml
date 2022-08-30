@@ -9,17 +9,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Some Envs
-      run: env
-    
-    - name: Other
-      run: echo $github.ref_name
-    
     - name: .NET code metrics
       uses: sn-cscharf/GitHubAction.ResourceGroup@master
       with:
-        name: ${{ github.ref_name }}
         region: westeurope
-        client-id: ${{ secrets.CLIENT_ID }}
-        client-secret: ${{ secrets.CLIENT_SECRET }}
         tenant-id: ${{ secrets.TENANT }}
