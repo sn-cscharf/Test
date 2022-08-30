@@ -12,6 +12,9 @@ jobs:
     
     - name: Check Envs
       run: env
+      
+    - name: GetBranch
+      run: git branch --contains tags/${{ github.ref_name }}
     
     - name: .NET code metrics
       uses: sn-cscharf/GitHubAction.ResourceGroup@master
