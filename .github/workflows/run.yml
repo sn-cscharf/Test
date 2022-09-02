@@ -1,8 +1,7 @@
 # The name of the work flow. Badges will use this name
 name: '.NET code metrics'
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
 jobs:
   analysis:
     runs-on: ubuntu-latest
