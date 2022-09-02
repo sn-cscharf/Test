@@ -19,4 +19,8 @@ jobs:
           location: 'westeurope'
       # Use the output from the `hello` step
       - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+        run: | 
+          echo "The time was ${{ steps.hello.outputs.group }}"
+          echo "The time was ${{ steps.hello.outputs.group.id }}"
+          echo "The time was ${{ steps.hello.outputs.group.name }}"
+          echo "The time was ${{ steps.hello.outputs.group.properties.provisioningState }}"
