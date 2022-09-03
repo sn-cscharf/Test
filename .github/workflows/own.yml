@@ -15,7 +15,7 @@ jobs:
         id: hello
         uses: sn-cscharf/GitHubAction.JavaTest@main
         with:
-          name: 'TEST-GROUP'
+          name: 'TEST-GR OUP*$'
           location: 'westeurope'
       # Use the output from the `hello` step
       - name: Get the output time
