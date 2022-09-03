@@ -15,12 +15,11 @@ jobs:
         id: hello
         uses: sn-cscharf/GitHubAction.JavaTest@main
         with:
-          name: 'TEST-GROUP-DEV2'
+          name: 'TEST-GROUP'
           location: 'westeurope'
       # Use the output from the `hello` step
       - name: Get the output time
         run: | 
-          echo "The time was ${{ steps.hello.outputs.group }}"
-          echo "The time was ${{ steps.hello.outputs.group.id }}"
-          echo "The time was ${{ steps.hello.outputs.group.name }}"
-          echo "The time was ${{ steps.hello.outputs.group.properties.provisioningState }}"
+          echo "The time was ${{ steps.hello.outputs.id }}"
+          echo "The time was ${{ steps.hello.outputs.location }}"
+          echo "The time was ${{ steps.hello.outputs.state }}"
