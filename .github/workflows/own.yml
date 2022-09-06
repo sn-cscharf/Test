@@ -2,7 +2,7 @@ name: Create Resource Group GitHub Action Example
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   provision:
     runs-on: ubuntu-latest
