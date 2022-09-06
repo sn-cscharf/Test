@@ -1,4 +1,4 @@
-name: Create Resource Group GitHub Action Example
+name: Create Resource Group GitHub Action Example TEST
 on:
   push:
     branches:
