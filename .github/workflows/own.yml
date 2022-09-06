@@ -16,7 +16,6 @@ jobs:
       id: step_one
       uses: sn-cscharf/GitHubAction.CreateResourceGroup@master
       with:
-        name: ${{ github.ref_name }}
         location: westeurope
     - name: Echo Outputs
       run: |
