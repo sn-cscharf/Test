@@ -1,32 +1,26 @@
+name: Create Resource Group GitHub Action Example
 on:
-  workflow_dispatch:
-
+  push:
+    branches:
+    - master
 jobs:
-  hello_world_job:
-    environment: Envi
+  provision:
     runs-on: ubuntu-latest
-    name: A job to say hello
     env:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
     steps:
-      - name: RunEnvs
-        run: |
-          env
-          echo ${{ github.ref }}
-          echo ${{ github.ref_name }}
-          
-      - name: Hello world action step
-        id: hello
-        uses: sn-cscharf/GitHubAction.JavaTest@main
-        with:
-          name: 'TEST-GR OUP*$'
-          location: 'westeurope'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: | 
-          echo "The time was ${{ steps.hello.outputs.id }}"
-          echo "The time was ${{ steps.hello.outputs.location }}"
-          echo "The time was ${{ steps.hello.outputs.state }}"
+    - name: Create Resource Group
+      id: step_one
+      uses: sn-cscharf/GitHubAction.CreateResourceGroup@main
+      with:
+        name: ${{ github.ref_name }}
+        location: westeurope
+    - name: Echo Outputs
+      run: |
+        echo "The id is ${{ steps.step_one.outputs.id }}"
+        echo "The location is ${{ steps.step_one.outputs.location }}"
+        echo "The provisioning state is ${{ steps.step_one.outputs.provisioning_state }}"
+        
