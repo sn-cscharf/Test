@@ -16,7 +16,8 @@ jobs:
       id: step_one
       uses: sn-cscharf/GitHubAction.CreateResourceGroup@master
       with:
-        location: westeurope
+        name: NEWNAME
+        location: westeuropes
     - name: Echo Outputs
       run: |
         echo "The id is ${{ steps.step_one.outputs.id }}"
