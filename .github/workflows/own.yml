@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: Create Resource Group
       id: step_one
-      uses: sn-cscharf/GitHubAction.CreateResourceGroup@main
+      uses: sn-cscharf/GitHubAction.CreateResourceGroup@master
       with:
         name: ${{ github.ref_name }}
         location: westeurope
