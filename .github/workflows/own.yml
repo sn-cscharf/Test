@@ -12,17 +12,6 @@ jobs:
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
     steps:
-    - name: Create Resource Group
-      id: step_one
-      uses: sn-cscharf/GitHubAction.CreateResourceGroup@master
-      with:
-        name: NEWNAME
-        location: westeurope
-    - name: Echo Outputs
-      run: |
-        echo "The id is ${{ steps.step_one.outputs.id }}"
-        echo "The location is ${{ steps.step_one.outputs.location }}"
-        echo "The provisioning state is ${{ steps.step_one.outputs.provisioning_state }}"
     - name: Remove Resource Group
       uses: sn-cscharf/GitHubAction.RemoveResourceGroup@master
       with:
