@@ -1,4 +1,4 @@
-name: Create Resource Group GitHub Action Example TEST
+name: Remove
 on:
   workflow_dispatch:
 jobs:
