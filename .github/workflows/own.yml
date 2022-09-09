@@ -1,8 +1,6 @@
 name: Create Resource Group GitHub Action Example TEST
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 jobs:
   provision:
     runs-on: ubuntu-latest
