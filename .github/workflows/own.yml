@@ -15,5 +15,5 @@ jobs:
     - name: Remove Resource Group
       uses: sn-cscharf/GitHubAction.RemoveResourceGroup@master
       with:
-        name: $defualt_branch
+        name: Some-Name
         
