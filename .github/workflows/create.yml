@@ -15,3 +15,5 @@ jobs:
       with:
         name: TEST-GROUP-DEV
         location: westeurope
+    - name: Create Service Plan
+      uses: sn-cscharf/GitHubAction.CreateAppServicePlan@main
